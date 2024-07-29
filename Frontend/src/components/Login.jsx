@@ -1,31 +1,31 @@
 import React from 'react'
 import GoogleLogin from 'react-google-login';
-// import { useNavigation } from 'react-router-dom';
+import { useNavigation } from 'react-router-dom';
 import{ FcGoogle } from 'react-icons/fc';
 import shareVideo from '../assets/share.mp4';
 import logo from '../assets/logowhite.png';
 
-// import { client } from '../client';
+import { client } from '../client';
 
 const Login = () => {
-  // const navigate = useNavigation();
+  const navigate = useNavigation();
 
-  // const responseGoogle= (response) =>{
-  //   localStorage.setItem('user', JSON.stringify(response.profileObj))
+  const responseGoogle= (response) =>{
+    localStorage.setItem('user', JSON.stringify(response.profileObj))
     
-  //   const {name, googleId, imageUrl} = response.profileObj;
-  //   const doc = {
-  //     _id: googleId,
-  //     _type: 'user',
-  //     userName: name,
-  //     image: imageUrl
-  //   }
+    const {name, googleId, imageUrl} = response.profileObj;
+    const doc = {
+      _id: googleId,
+      _type: 'user',
+      userName: name,
+      image: imageUrl
+    }
 
-  //   client.createIfNotExist(doc)
-  //     .then(() => 
-  //       navigate('/', { replace: true})
-  //     )
-  // }
+    client.createIfNotExist(doc)
+      .then(() => 
+        navigate('/', { replace: true})
+      )
+  }
 
   
   
@@ -59,9 +59,9 @@ const Login = () => {
 
                 </button>
               )}
-              // onSuccess={responseGoogle}
-              // onFailure={responseGoogle}
-              // cookiePolicy='single_host_origin'
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy='single_host_origin'
             />
           </div>
         </div>
