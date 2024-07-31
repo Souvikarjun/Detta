@@ -1,11 +1,11 @@
 import React from 'react'
 import GoogleLogin from 'react-google-login';
-// import { useNavigation } from 'react-router-dom';
+import { useNavigation } from 'react-router-dom';
 import{ FcGoogle } from 'react-icons/fc';
 import shareVideo from '../assets/share.mp4';
 import logo from '../assets/logowhite.png';
 
-// import { client } from '../client';
+import { client } from '../client';
 
 const Login = () => {
   // const navigate = useNavigation();
@@ -23,9 +23,13 @@ const Login = () => {
 
   //   client.createIfNotExist(doc)
   //     .then(() => 
-  //       navigate('/', { replace: true})
+  //       navigate('/*', { replace: true})
   //     )
   // }
+
+  const responseGoogle = (response) =>{
+    console.log(response);
+  }
 
   
   
@@ -59,9 +63,9 @@ const Login = () => {
 
                 </button>
               )}
-              // onSuccess={responseGoogle}
-              // onFailure={responseGoogle}
-              // cookiePolicy='single_host_origin'
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy='single_host_origin'
             />
           </div>
         </div>
