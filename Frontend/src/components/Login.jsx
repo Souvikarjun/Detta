@@ -1,11 +1,11 @@
 import React from 'react'
 import GoogleLogin from 'react-google-login';
-import { useNavigation } from 'react-router-dom';
+// import { useNavigation } from 'react-router-dom';
 import{ FcGoogle } from 'react-icons/fc';
 import shareVideo from '../assets/share.mp4';
 import logo from '../assets/logowhite.png';
 
-import { client } from '../client';
+// import { client } from '../client';
 
 const Login = () => {
   // const navigate = useNavigation();
