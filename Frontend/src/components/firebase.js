@@ -18,5 +18,5 @@ const firebaseConfig = {
 
 // Initialize Firebase
 // keeping streak
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
